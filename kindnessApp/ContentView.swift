@@ -35,11 +35,20 @@ struct ContentView: View {
                 .offset(y: 350)
             }
             .toolbar {
-                NavigationLink(destination: SwiftUIView(), label: {
-                    Image("leaderboard")
-                        .resizable()
-                        .frame(width: 50, height: 50)
-                })
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: SwiftUIView(), label: {
+                        Image("leaderboard")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                    })
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    NavigationLink(destination: dailychallenge(), label: {
+                        Image("target")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                    })
+                }
             }
         }
     }
